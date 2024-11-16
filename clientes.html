@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario - Empresa de Venta a Granel</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>[LOGO DE LA EMPRESA]</span>
+        </div>
+        <nav>
+            <button onclick="window.location.href='main.html'" class="nav-button">
+                <span>INICIO</span>
+            </button>
+            <button onclick="window.location.href='Index_inventario.html'" class="nav-button">
+                <span>INVENTARIO</span>
+            </button>
+            <button onclick="window.location.href='ventas.html'" class="nav-button">
+                <span>VENTAS</span>
+            </button>
+            <button onclick="window.location.href='proveedores.html'" class="nav-button">
+                <span>PROVEEDORES</span>
+            </button>
+            <button onclick="window.location.href='movimientos.html'" class="nav-button">
+                <span>MOVIMIENTOS</span>
+            </button>
+            
+        </nav>
+    </header>
+    
+    <section class="filter-section">
+        <button class="add-button">AÑADIR</button>
+        <button class="filter-button" onclick="toggleFilterMenu()">FILTRAR</button>
+        <div id="filter-menu" class="submenu-overlay" style="display: none;">
+            <div class="submenu">
+                <h2>Filtrar Clientes</h2>
+                <label>ID del Cliente:
+                    <input type="text" id="filterIdCliente" placeholder="Ingrese ID del cliente">
+                </label>
+                <label>Cliente:
+                    <input type="text" id="filterCliente" placeholder="Ingrese nombre del cliente">
+                </label>
+                <label>Dirección:
+                    <input type="text" id="filterDireccion" placeholder="Ingrese dirección">
+                </label>
+                <label>Beneficios:
+                    <input type="text" id="filterBeneficios" placeholder="Ingrese beneficios">
+                </label>
+                <label>Productos:
+                    <input type="text" id="filterProductos" placeholder="Ingrese productos">
+                </label>
+                <label>Contacto:
+                    <input type="text" id="filterContacto" placeholder="Ingrese contacto">
+                </label>
+                <label>Correo:
+                    <input type="text" id="filterCorreo" placeholder="Ingrese correo">
+                </label>
+                <label>Tipo:
+                    <input type="text" id="filterTipoCliente" placeholder="Ingrese tipo de cliente">
+                </label>
+                <label>Membresía:
+                    <input type="text" id="filterMembresia" placeholder="Ingrese membresía">
+                </label>
+                <label>Fidelidad:
+                    <input type="text" id="filterFidelidad" placeholder="Ingrese fidelidad">
+                </label>
+                <div class="submenu-buttons">
+                    <button id="applyFiltersButton">Aplicar Filtros</button>
+                    <button id="cancelFiltersButton">Cancelar</button>
+                </div>
+            </div>
+        </div>        
+    </section>
+    
+    <section class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ID CLIENTE</th>
+                    <th>CLIENTE</th>
+                    <th>DIRECCIÓN</th>
+                    <th>BENEFICIOS</th>
+                    <th>PRODUCTOS</th>
+                    <th>CONTACTO</th>
+                    <th>CORREO</th>
+                    <th>TIPO</th>
+                    <th>MEMBRESÍA</th>
+                    <th>FIDELIDAD</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
+
+    <div class="submenu-overlay" id="submenu-overlay">
+        <div class="submenu">
+            <h2>Ingresar Datos del Cliente</h2>
+            <label>ID Cliente: <input type="text" id="id"></label>
+            <label>Cliente: <input type="text" id="cliente"></label>
+            <label>Dirección: <input type="text" id="direccion"></label>
+            <label>Beneficios: <input type="text" id="beneficios"></label>
+            <label>Productos: <input type="text" id="productos"></label>
+            <label>Contacto: <input type="text" id="Contacto"></label>
+            <label>Correo: <input type="text" id="Correo"></label>
+            <label>Tipo: <input type="text" id="tipo"></label>
+            <label>Membresía: <input type="text" id="membresia"></label>
+            <label>Fidelidad: <input type="text" id="fidelidad"></label>
+            <div class="submenu-buttons">
+                <button id="saveButton">Guardar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="clientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario - Empresa de Venta a Granel</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>[LOGO DE LA EMPRESA]</span>
+        </div>
+        <nav>
+            <button onclick="window.location.href='main.html'" class="nav-button">
+                <span>INICIO</span>
+            <button onclick="window.location.href='Index_inventario.html'" class="nav-button">
+                <span>INVENTARIO</span>
+            </button>
+            
+            <button onclick="window.location.href='proveedores.html'" class="nav-button">
+                <span>PROVEEDORES</span>
+            </button>
+            <button onclick="window.location.href='movimientos.html'" class="nav-button">
+                <span>MOVIMIENTOS</span>
+            </button>
+            <button onclick="window.location.href='clientes.html'" class="nav-button">
+                <span>CLIENTES</span>
+            </button>
+        </nav>
+    </header>
+    
+    <section class="filter-section">
+        <button class="add-button">AÑADIR</button>
+        <button class="filter-button" onclick="toggleFilterMenu()">FILTRAR</button>
+        <div id="filter-menu" class="submenu-overlay" style="display: none;">
+            <div class="submenu">
+                <h2>Filtrar Productos</h2>
+                <label>Código del Producto:
+                    <input type="text" id="filterCodigoProducto" placeholder="Ingrese código">
+                </label>
+                <label>Producto:
+                    <input type="text" id="filterProducto" placeholder="Ingrese nombre del producto">
+                </label>
+                <label>Rango de Fecha:
+                    <input type="date" id="filterFechaInicio">
+                    <input type="date" id="filterFechaFin">
+                </label>
+                <label>Rango de Cantidad:
+                    <input type="number" id="filterCantidadMin" placeholder="Mínimo" min="0">
+                    <input type="number" id="filterCantidadMax" placeholder="Máximo" min="0">
+                </label>
+                <div class="submenu-buttons">
+                    <button id="applyFiltersButton">Aplicar Filtros</button>
+                    <button id="cancelFiltersButton">Cancelar</button>
+                </div>
+            </div>
+        </div>        
+    </section>
+    <section class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CÓDIGO DEL PRODUCTO</th>
+                    <th>PRODUCTO</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO UNITARIO</th>
+                    <th>PRECIO TOTAL</th>
+                    <th>FECHA DE VENTA</th>
+                    <th>ID DEL CLIENTE</th>
+                    <th>FRECUENCIA DE COMPRA</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
+
+    <div class="submenu-overlay" id="submenu-overlay">
+        <div class="submenu">
+            <h2>Ingresar datos del producto</h2>
+            <label>Código del Producto: <input type="text" id="codigoProducto"></label>
+            <label>Producto: <input type="text" id="producto"></label>
+            <label>Cantidad: <input type="number" id="cantidad" min="1"></label>
+            <label>Precio unitario: <input type="number" id="precio" min="1"></label>
+            <label>Fecha de venta: <input type="date" id="fecha"></label>
+            <label>Id del cliente: <input type="text" id="cliente"></label>
+            <div class="submenu-buttons">
+                <button id="saveButton">Guardar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ventas.js"></script>
+</body>
+</html>

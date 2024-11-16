@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario - Empresa de Venta a Granel</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>[LOGO DE LA EMPRESA]</span>
+        </div>
+        <nav>
+            <button onclick="window.location.href='main.html'" class="nav-button">INICIO</button>
+            <button onclick="window.location.href='Index_inventario.html'" class="nav-button">INVENTARIO</button>
+            <button onclick="window.location.href='ventas.html'" class="nav-button">VENTAS</button>
+            <button onclick="window.location.href='proveedores.html'" class="nav-button">PROVEEDORES</button>
+            <button onclick="window.location.href='clientes.html'" class="nav-button">CLIENTES</button>
+        </nav>
+    </header>
+
+    <section class="filter-section">
+        <button class="add-button">AÑADIR</button>
+        <button class="filter-button">FILTRAR</button>
+    </section>
+
+    <section class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CODIGO DEL PRODUCTO</th>
+                    <th>ID DE PROVEEDOR O CLIENTE</th>
+                    <th>PROVEEDOR O CLIENTE</th>
+                    <th>PRODUCTO</th>
+                    <th>CANTIDAD</th>
+                    <th>CONDICIÓN DEL PRODUCTO</th>
+                    <th>TIPO DE MOVIMIENTO</th>
+                    <th>LOTE</th>
+                    <th>FECHA DE ENVÍO O RECIBIDO</th>
+                    <th>SUPERVISOR DEL PEDIDO</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
+
+    <div class="submenu-overlay" id="submenu-overlay">
+        <div class="submenu">
+            <h2>Ingresar datos del movimiento</h2>
+            <label>Código del Producto: <input type="text" id="codigoProducto"></label>
+            <label>ID del Proveedor o Cliente: <input type="text" id="idproveedorocliente"></label>
+            <label>Proveedor o Cliente: <input type="text" id="proveedorocliente"></label>
+            <label>Producto: <input type="text" id="producto"></label>
+            <label>Cantidad: <input type="number" id="cantidad" min="1"></label>
+            <label>Condición del Producto: <input type="text" id="condicion"></label>
+            <label>Tipo de Movimiento: <input type="text" id="tipodemovimiento"></label>
+            <label>Lote de Fabricación: <input type="text" id="lote"></label>
+            <label>Fecha de Envío o Recibido: <input type="date" id="fechadeenvioorecibido"></label>
+            <label>Supervisor del Pedido: <input type="text" id="supervisor"></label>
+            <div class="submenu-buttons">
+                <button id="saveButton">Guardar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="submenu-overlay" id="filter-menu" style="display: none;">
+        <div class="submenu">
+            <h2>Aplicar Filtros</h2>
+            <label>Código del Producto: <input type="text" id="filterCodigoProducto"></label>
+            <label>Proveedor o Cliente: <input type="text" id="filterProveedorOCliente"></label>
+            <label>Producto: <input type="text" id="filterProducto"></label>
+            <label>Fecha Inicio: <input type="date" id="filterFechaInicio"></label>
+            <label>Fecha Fin: <input type="date" id="filterFechaFin"></label>
+            <label>Cantidad Mínima: <input type="number" id="filterCantidadMin" min="0"></label>
+            <label>Cantidad Máxima: <input type="number" id="filterCantidadMax" min="0"></label>
+            <div class="submenu-buttons">
+                <button id="applyFiltersButton">Aplicar</button>
+                <button id="cancelFiltersButton">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="movimientos.js"></script>
+</body>
+</html>

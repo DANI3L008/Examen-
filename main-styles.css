@@ -1,0 +1,110 @@
+/* Reset y estilo base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    background: linear-gradient(135deg, #2d2d44, #1a1a2e);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.logo {
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #00f2ff;
+    border: 2px solid #00f2ff;
+    border-radius: 15px;
+    padding: 15px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    animation: pulseLogo 2s infinite;
+}
+
+.main-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-button {
+    background: linear-gradient(135deg, #2d2d44, #1a1a2e);
+    border: 2px solid #00f2ff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.menu-button img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.menu-button:hover {
+    background: linear-gradient(135deg, #00f2ff, #2d2d44);
+    color: #1a1a2e;
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes pulseLogo {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 242, 255, 0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .menu-button {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9em;
+    }
+
+    .menu-button img {
+        width: 40px;
+        height: 40px;
+    }
+}

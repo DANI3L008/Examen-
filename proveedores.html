@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario - Empresa de Venta a Granel</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>[LOGO DE LA EMPRESA]</span>
+        </div>
+        <nav>
+            <button onclick="window.location.href='main.html'" class="nav-button">
+                <span>INICIO</span>
+            </button>
+            <button onclick="window.location.href='Index_inventario.html'" class="nav-button">
+                <span>INVENTARIO</span>
+            </button>
+            <button onclick="window.location.href='ventas.html'" class="nav-button">
+                <span>VENTAS</span>
+            </button>
+            
+            <button onclick="window.location.href='movimientos.html'" class="nav-button">
+                <span>MOVIMIENTOS</span>
+            </button>
+            <button onclick="window.location.href='clientes.html'" class="nav-button">
+                <span>CLIENTES</span>
+            </button>
+        </nav>
+    </header>
+    
+    <section class="filter-section">
+        <button class="add-button">AÑADIR</button>
+        <button class="filter-button" onclick="toggleFilterMenu()">FILTRAR</button>
+        <div id="filter-menu" class="submenu-overlay" style="display: none;">
+            <div class="submenu">
+                <h2>Filtrar Proveedores</h2>
+                <label>ID del Proveedor:
+                    <input type="text" id="filterIdProveedor" placeholder="Ingrese ID del proveedor">
+                </label>
+                <label>Proveedor:
+                    <input type="text" id="filterProveedor" placeholder="Ingrese nombre del proveedor">
+                </label>
+                <label>Producto:
+                    <input type="text" id="filterProducto" placeholder="Ingrese nombre del producto">
+                </label>
+                <label>Días de Entrega:
+                    <input type="text" id="filterDiasEntrega" placeholder="Ingrese días de entrega">
+                </label>
+                <label>Horarios:
+                    <input type="text" id="filterHorarios" placeholder="Ingrese horarios">
+                </label>
+                <label>Contacto:
+                    <input type="text" id="filterContacto" placeholder="Ingrese contacto">
+                </label>
+                <label>Correo:
+                    <input type="text" id="filterCorreo" placeholder="Ingrese correo">
+                </label>
+                <label>Calidad del Producto:
+                    <input type="text" id="filterCalidad" placeholder="Ingrese calidad del producto">
+                </label>
+                <label>Duración del Contrato:
+                    <input type="text" id="filterDuracion" placeholder="Ingrese duración">
+                </label>
+                <label>Frecuencia de Abastecimiento:
+                    <input type="text" id="filterFrecuencia" placeholder="Ingrese frecuencia">
+                </label>
+                <div class="submenu-buttons">
+                    <button id="applyFiltersButton">Aplicar Filtros</button>
+                    <button id="cancelFiltersButton">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="table-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ID DEL PROVEEDOR</th>
+                    <th>PROVEEDOR</th>
+                    <th>PRODUCTO</th>
+                    <th>DIAS DE ENTREGA</th>
+                    <th>HORARIOS</th>
+                    <th>CONTACTO</th>
+                    <th>CORREO</th>
+                    <th>CALIDAD DEL PRODUCTO</th>
+                    <th>DURACIÓN DEL CONTRATO</th>
+                    <th>FRECUENCIA DE ABASTECIMIENTO</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
+
+    <div class="submenu-overlay" id="submenu-overlay">
+        <div class="submenu">
+            <h2>Ingresar Datos del Proveedor</h2>
+            <label>ID del Proveedor: <input type="text" id="Iddelproveedor"></label>
+            <label>Proveedor: <input type="text" id="Proveedor"></label>
+            <label>Producto: <input type="text" id="Producto"></label>
+            <label>Días de Entrega: <input type="text" id="Diasdeentrega"></label>
+            <label>Horarios: <input type="text" id="Horarios"></label>
+            <label>Contacto: <input type="text" id="Contacto"></label>
+            <label>Correo: <input type="text" id="Correo"></label>
+            <label>Calidad del Producto: <input type="text" id="Calidad"></label>
+            <label>Duración del Contrato: <input type="text" id="Duracion"></label>            
+            <div class="submenu-buttons">
+                <button id="saveButton">Guardar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="proveedores.js"></script>
+</body>
+</html>

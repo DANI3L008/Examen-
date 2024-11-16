@@ -1,0 +1,235 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #1b1b2f, #121212);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(135deg, #2d2d44, #1b1b2f);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+header .logo span {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00adb5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header .nav-button, header .search-button {
+    background: linear-gradient(135deg, #2563eb, #1f4068);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .nav-button:hover, header .search-button:hover {
+    transform: scale(1.05);
+    background: #00adb5;
+}
+
+.table-section {
+    margin-top: 30px;
+    width: 90%;
+    background: linear-gradient(135deg, #1f2937, #1b1b2f);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border: 1px solid rgba(0, 173, 181, 0.2);
+}
+
+thead th {
+    background: #00adb5;
+    color: #1e293b;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #212b36;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1b1f24;
+}
+
+tbody tr:hover {
+    background: #2563eb;
+    color: white;
+    transition: background 0.3s;
+}
+
+button {
+    background: linear-gradient(135deg, #00adb5, #1f4068);
+    color: #1e293b;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2563eb, #1b1b2f);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.add-button, .filter-button {
+    margin: 15px auto;
+    font-size: 1.2em;
+    display: block;
+    text-align: center;
+}
+
+.submenu-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
+    width: 90%; 
+    max-width: 400px; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    background: rgba(0, 0, 0, 0.9); 
+    padding: 25px;
+    border-radius: 20px;
+    z-index: 1000; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.submenu {
+    background: linear-gradient(135deg, #1f2937, #1b1b2f);
+    padding: 25px;
+    border-radius: 15px;
+    color: #00adb5;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.submenu h2 {
+    margin-bottom: 20px;
+    color: #00adb5;
+    font-size: 1.8em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.submenu label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #e0e0e0;
+}
+
+.submenu input, .submenu select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 173, 181, 0.4);
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #e0e0e0;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.submenu input:focus, .submenu select:focus {
+    border-color: #00adb5;
+    outline: none;
+    background: #1b1f24;
+}
+
+.submenu-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+#saveButton, #cancelButton {
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#saveButton {
+    background: linear-gradient(135deg, #00adb5, #2563eb);
+    color: white;
+}
+
+#cancelButton {
+    background: #ef4444;
+    color: white;
+}
+
+#saveButton:hover {
+    background: linear-gradient(135deg, #2563eb, #1b1b2f);
+}
+
+#cancelButton:hover {
+    background: #dc2626;
+}
+
+button:hover, .submenu input:focus {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(0, 173, 181, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(0, 173, 181, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(0, 173, 181, 0.3); }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-section {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .submenu {
+        width: 100%;
+    }
+}
